@@ -31,7 +31,10 @@ public class MainFrame extends JFrame{
         }
 
         if(listPublications != null) {
-            for(String msg : )
+
+            for(String msg : listPublications) {
+
+            }
         }
     }
 }

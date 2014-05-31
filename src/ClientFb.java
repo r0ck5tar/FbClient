@@ -20,10 +20,11 @@ public class ClientFb {
             client.annuaire = null;
         }
 
-        new LoginFrame(client.annuaire);
+        //new LoginFrame(client.annuaire);
 
-        /*
+
         if(client.annuaire != null) {
+            /*
             client.annuaire.createUser("Hakim", "1234");
 
             Invitation hakim = client.annuaire.findUser("Hakim");
@@ -38,7 +39,18 @@ public class ClientFb {
             else{
                 System.out.println("login fail");
             }
+            */
+
+            client.annuaire.createUser("Hakim", "1234");
+            client.annuaire.createUser("Clément", "1234");
+
+            Invitation hakim = client.annuaire.findUser("Hakim");
+            Invitation clement = client.annuaire.findUser("Clément");
+
+            clement.invite(hakim);  //hakim invites clément
+
+
         }
-        */
+
     }
 }
