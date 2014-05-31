@@ -48,11 +48,14 @@ public class ClientFb {
             Invitation clement = client.annuaire.findUser("Clément");
 
             Mur murHakim = client.annuaire.login("Hakim", "1234");
-            Mur murClement = client.annuaire.login("Clement", "1234");
+            Mur murClement = client.annuaire.login("Clément", "1234");
 
             clement.invite(hakim);  //hakim invites clément
 
-            
+            clement.accept(murHakim); //clément accepts
+
+            System.out.println("amis de Hakim: " + murHakim.getListeAmis().size());
+            System.out.println("amis de Clément: " + murClement.getListeAmis().size());
         }
 
     }
