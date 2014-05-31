@@ -47,9 +47,12 @@ public class ClientFb {
             Invitation hakim = client.annuaire.findUser("Hakim");
             Invitation clement = client.annuaire.findUser("Clément");
 
+            Mur murHakim = client.annuaire.login("Hakim", "1234");
+            Mur murClement = client.annuaire.login("Clement", "1234");
+
             clement.invite(hakim);  //hakim invites clément
 
-
+            
         }
 
     }
