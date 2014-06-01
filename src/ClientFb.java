@@ -47,15 +47,24 @@ public class ClientFb {
             Invitation hakim = client.annuaire.findUser("Hakim");
             Invitation clement = client.annuaire.findUser("Clément");
 
-            Mur murHakim = client.annuaire.login("Hakim", "1234");
-            Mur murClement = client.annuaire.login("Clément", "1234");
+            Utilisateur userHakim = client.annuaire.login("Hakim", "1234");
+            Utilisateur userClement = client.annuaire.login("Clément", "1234");
 
             clement.invite(hakim);  //hakim invites clément
 
-            clement.accept(murHakim); //clément accepts
+            System.out.println("InvitationsEnAttente,  Clément: " + userClement.getInvitationsEnAttente().size());
+            System.out.println("DemandeAmiEnAttente,  Hakim: " + userHakim.getDemandeAmiEnAttente().size());
 
-            System.out.println("amis de Hakim: " + murHakim.getListeAmis().size());
-            System.out.println("amis de Clément: " + murClement.getListeAmis().size());
+            hakim.accept(userClement.getMur());
+
+            //clement.accept(murHakim); //clément accepts
+
+            System.out.println("amis de Hakim: " + userHakim.getMur().getListeAmis().size());
+            System.out.println("amis de Clément: " + userClement.getMur().getListeAmis().size());
+
+            System.out.println("InvitationsEnAttente,  Clément: " + userClement.getInvitationsEnAttente().size());
+            System.out.println("DemandeAmiEnAttente,  Hakim: " + userHakim.getDemandeAmiEnAttente().size());
+
         }
 
     }
